@@ -7,15 +7,15 @@ library(dplyr)
 shapefiles <- list.files("./Data/", pattern = "\\.(shp|gpkg)$", full.names = TRUE, recursive = TRUE)
 
 # Define layer names (adjust these manually to match your files)
-layer_names <- c("Bronze and Iron Age hollow ways, Khabur Valley, Mesopotamia", "Qhapaq Ñan - Camino Inca", "Roman roads in Wales")
-layer_names_text <- c("Priß, D., Wainwright, J., Lawrence, D., Turnbull, L., Prell, C., Karittevlis, C., Ioannides, A.A., 2025. Filling the Gaps—Computational Approaches to Incomplete Archaeological Networks. J Archaeol Method Theory 32, 19. https://doi.org/10.1007/s10816-024-09688-z", "www.geogpsperu.com", "Burnham, B.C., Davies, J.L. (Eds.), 2010. Roman Frontiers in Wales and the Marches. Royal Commission on the Ancient and Historical Monuments of Wales, Aberystwyth. Digitised by Joseph Lewis")
+layer_names <- c("pre-Hispanic roads", "Bronze and Iron Age hollow ways, Khabur Valley, Mesopotamia", "Qhapaq Ñan - Camino Inca", "Roman roads in Wales")
+layer_names_text <- c("Saintenoy, T., Llobera, M., Thiéry, N.M., Crespo Fernández, M., Fábrega-Álvarez, P., Santos, R., 2025. Topological insights into the diachrony of ancient road networks: Exploratory predictive modelling in the Andean highlands. Journal of Archaeological Science 174, 106125. https://doi.org/10.1016/j.jas.2024.106125", "Priß, D., Wainwright, J., Lawrence, D., Turnbull, L., Prell, C., Karittevlis, C., Ioannides, A.A., 2025. Filling the Gaps—Computational Approaches to Incomplete Archaeological Networks. J Archaeol Method Theory 32, 19. https://doi.org/10.1007/s10816-024-09688-z", "www.geogpsperu.com", "Burnham, B.C., Davies, J.L. (Eds.), 2010. Roman Frontiers in Wales and the Marches. Royal Commission on the Ancient and Historical Monuments of Wales, Aberystwyth. Digitised by Joseph Lewis")
 
 shapes <- list()
 
 # Read and transform all shapefiles
 for(i in 1:length(shapefiles)) {
   shapes[[i]] <- st_read(shapefiles[i])
-  if(i == 1) { 
+  if(i == 2) { 
     sf::st_crs(shapes[[i]]) <- sf::st_crs(32637)
     }
   shapes[[i]] <- sf::st_make_valid(shapes[[i]])
