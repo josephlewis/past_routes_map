@@ -27,7 +27,7 @@ for(i in 1:length(shapefiles)) {
 
 # Create Leaflet Map
 map <- leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron)
+  addProviderTiles(providers$OpenTopoMap)
 
 # Add each shape as a separate layer
 for (i in seq_along(shapes)) {
