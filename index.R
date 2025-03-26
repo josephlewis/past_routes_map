@@ -20,6 +20,5 @@ combined_shapes <- do.call(rbind, shapes)
 # Create Leaflet Map
 map <- leaflet() %>%
   addProviderTiles(providers$CartoDB.Positron) %>%
-  addPolylines(data = combined_shapes, color = "black", weight = 1, fillOpacity = 1)
-
+  addPolylines(data = combined_shapes, color = "black", weight = 1, opacity = 1)
 saveWidget(map, file="index.html")
