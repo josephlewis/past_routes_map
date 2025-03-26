@@ -8,7 +8,7 @@ shapefiles <- list.files("./Data/", pattern = "\\.(shp|gpkg)$", full.names = TRU
 
 # Define layer names (adjust these manually to match your files)
 layer_names <- c("Bronze and Iron Age hollow ways, Khabur Valley, Mesopotamia", "Qhapaq Ñan - Camino Inca", "Roman roads in Wales")
-layer_names_text <- c("Priß, D., Wainwright, J., Lawrence, D., Turnbull, L., Prell, C., Karittevlis, C., Ioannides, A.A., 2025. Filling the Gaps—Computational Approaches to Incomplete Archaeological Networks. J Archaeol Method Theory 32, 19. https://doi.org/10.1007/s10816-024-09688-z", "www.geogpsperu.com", "Burnham, B.C., Davies, J.L. (Eds.), 2010. Roman Frontiers in Wales and the Marches. Royal Commission on the Ancient and Historical Monuments of Wales, Aberystwyth")
+layer_names_text <- c("Priß, D., Wainwright, J., Lawrence, D., Turnbull, L., Prell, C., Karittevlis, C., Ioannides, A.A., 2025. Filling the Gaps—Computational Approaches to Incomplete Archaeological Networks. J Archaeol Method Theory 32, 19. https://doi.org/10.1007/s10816-024-09688-z", "www.geogpsperu.com", "Burnham, B.C., Davies, J.L. (Eds.), 2010. Roman Frontiers in Wales and the Marches. Royal Commission on the Ancient and Historical Monuments of Wales, Aberystwyth. Digitised by Joseph Lewis")
 
 shapes <- list()
 
