@@ -7,13 +7,16 @@ library(dplyr)
 shapefiles <- list.files("./Data/", pattern = "\\.(shp|gpkg)$", full.names = TRUE, recursive = TRUE)
 
 # Define layer names (adjust these manually to match your files)
-layer_names <- c("Qhapaq Ñan - Camino Inca  www.geogpsperu.com", "Roman roads in Wales")
+layer_names <- c("Bronze and Iron Age hollow ways, Khabur Valley, Mesopotamia (Priß et al. 2024)", "Qhapaq Ñan - Camino Inca  www.geogpsperu.com", "Roman roads in Wales (Roman Frontiers in Wales and the Marches, 2010. Digitised by Joseph Lewis)")
 
 shapes <- list()
 
 # Read and transform all shapefiles into a list
 for(i in 1:length(shapefiles)) {
   shapes[[i]] <- st_read(shapefiles[i])
+  if(i == 1) { 
+    sf::st_crs(shapes[[i]]) <- sf::st_crs(32637)
+    }
   shapes[[i]] <- sf::st_make_valid(shapes[[i]])
   shapes[[i]] <- sf::st_cast(shapes[[i]], "LINESTRING")
   shapes[[i]] <- st_transform(shapes[[i]], crs = st_crs(4326))
