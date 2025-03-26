@@ -42,5 +42,3 @@ map <- map %>%
   )
 
 saveWidget(map, file="index.html")
-
-# combined_shapes <- do.call(rbind, shapes)
