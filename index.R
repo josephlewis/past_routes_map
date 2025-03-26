@@ -12,7 +12,7 @@ layer_names_text <- c("Priß, D., Wainwright, J., Lawrence, D., Turnbull, L., Pr
 
 shapes <- list()
 
-# Read and transform all shapefiles into a list
+# Read and transform all shapefiles
 for(i in 1:length(shapefiles)) {
   shapes[[i]] <- st_read(shapefiles[i])
   if(i == 1) { 
@@ -37,14 +37,12 @@ for (i in seq_along(shapes)) {
                  weight = 1, 
                  opacity = 1, 
                  group = layer_names[i],
-                 popup = ~layer_names_text)
-}
+                 popup = ~layer_names_text)}
 
 # Add layer control
 map <- map %>%
   addLayersControl(
     overlayGroups = layer_names,
-    options = layersControlOptions(collapsed = FALSE)
-  )
+    options = layersControlOptions(collapsed = FALSE))
 
 saveWidget(map, file="index.html")
